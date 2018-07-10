@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">KPPN Pekanbaru</string>
+    <string name="app_name">SIGAP 008</string>
+    <string name="title_activity_web_view">WebView</string>
 </resources>
