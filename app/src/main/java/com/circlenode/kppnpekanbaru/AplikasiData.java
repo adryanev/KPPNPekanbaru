@@ -17,7 +17,6 @@ public class AplikasiData {
         aplikasiList.add(new Aplikasi("FAQ","http://www.google.com","faq"));
         aplikasiList.add(new Aplikasi("Format Surat","https://www.kppn-pku008.com/session/index","format_surat"));
         aplikasiList.add(new Aplikasi("Handbook","https://www.kppn-pku008.com/session/handbook","handbook"));
-        aplikasiList.add(new Aplikasi("SIKAPKU","com.circlenode.adryanekavandra.kppn","sikapku"));
         return aplikasiList;
 
     }

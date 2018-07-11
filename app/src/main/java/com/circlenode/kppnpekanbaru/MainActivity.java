@@ -10,7 +10,10 @@ import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.URLUtil;
 
@@ -32,10 +35,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         setContentView(R.layout.activity_main);
         utils = new Utils(this);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
+        setSupportActionBar(toolbar);
         recyclerView = (RecyclerView) findViewById(R.id.rvAplikasi);
         final CustomTabsIntent customTabsIntent = new CustomTabsIntent.Builder()
                 .addDefaultShareMenuItem()
@@ -94,5 +100,28 @@ public class MainActivity extends AppCompatActivity {
     private void loadData() {
         recyclerView.setAdapter(aplikasiAdapter);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Integer id = item.getItemId();
+
+            switch (id){
+                case R.id.kontak:
+                    Intent i = new Intent(this,Kontak.class);
+                    startActivity(i);
+                    break;
+                case R.id.tentang:
+                    Intent j = new Intent(this, Tentang.class);
+                    startActivity(j);
+                    break;
+            }
+        return super.onOptionsItemSelected(item);
     }
 }
